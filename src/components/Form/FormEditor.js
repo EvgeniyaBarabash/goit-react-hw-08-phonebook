@@ -1,29 +1,34 @@
-import { useState} from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
 import s from './FormEditor.module.css';
 import contactsAction from '../../app/contacts/contact-action';
-import { connect } from 'react-redux';
-function FormEditor({ onSubmit }) {
+import { useSelector, useDispatch } from 'react-redux';
+import { getContacts } from '../../app/contacts/contacts-selector';
+export default function FormEditor() {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const [number, setNumber] =useState('');
-const handleChange=event=>{
-  const{name, value}=event.target;
-  switch(name){
-    case 'name':
-      setName(value);
-      break;
+  const [number, setNumber] = useState('');
+  const handleChange = event => {
+    const { name, value } = event.target;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
 
-      case'number':
-      setNumber(value);
-      break;
+      case 'number':
+        setNumber(value);
+        break;
       default:
         return;
-  }
-}
+    }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ name, number });
+
+    contacts.map(contact => contact.name).includes(name)
+      ? alert(`${name} is already in contacts`)
+      : dispatch(contactsAction.addContact({ name, number }));
     clearForm();
   };
   const clearForm = () => {
@@ -67,13 +72,4 @@ const handleChange=event=>{
       </button>
     </form>
   );
-};
-
-FormEditor.propTypes={
-  onSubmit: PropTypes.func.isRequired,
 }
-
-const mapDispatchToProps=dispatch=>({
-  onSubmit:  ({ name, number })=>dispatch(contactsAction.addContact ({ name, number })),
-});
-export default connect(null, mapDispatchToProps)(FormEditor)

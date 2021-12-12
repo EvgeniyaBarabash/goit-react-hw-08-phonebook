@@ -6,7 +6,6 @@ import FormEditor from 'components/Form/FormEditor';
 import Filter from 'components/Filter/Filter';
 import { useLocalStorage } from 'hooks/useLocalStorage';
 export default function App() {
-  
   // const addContact = ({ name, number }) => {
   //   const contact = {
   //     id: uuidv4(),
@@ -47,8 +46,8 @@ export default function App() {
       <h2 className="title">Phonebook</h2>
       <FormEditor />
       <h2 className="title">Contacts</h2>
-      <Filter/>
-      <ContactList/>
+      <Filter />
+      <ContactList />
     </div>
   );
 }
