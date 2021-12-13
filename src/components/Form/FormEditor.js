@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import s from './FormEditor.module.css';
-import contactsAction from '../../app/contacts/contact-action';
+import contactsAction from '../../redux/contacts/contact-action';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from '../../app/contacts/contacts-selector';
+import { getContacts } from '../../redux/contacts/contacts-selector';
 export default function FormEditor() {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
