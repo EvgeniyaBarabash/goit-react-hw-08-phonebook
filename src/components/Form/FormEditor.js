@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import s from './FormEditor.module.css';
-import contactsAction from '../../redux/contacts/contact-action';
+import contactsOperation from '../../redux/contacts/contacts-operation';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contacts-selector';
 export default function FormEditor() {
@@ -28,7 +28,7 @@ export default function FormEditor() {
 
     contacts.map(contact => contact.name).includes(name)
       ? alert(`${name} is already in contacts`)
-      : dispatch(contactsAction.addContact({ name, number }));
+      : dispatch(contactsOperation.addContact({ name, number }));
     clearForm();
   };
   const clearForm = () => {
