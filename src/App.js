@@ -4,14 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import ContactList from './components/ContactList/ContactList';
 import FormEditor from 'components/Form/FormEditor';
 import Filter from 'components/Filter/Filter';
-import contactsOperations from './redux/contacts/contacts-operation';
+import { fetchContacts } from './redux/contacts/contacts-operation';
 import { getLoading } from 'redux/contacts/contacts-selector';
 
 export default function App() {
   const dispatch = useDispatch();
   const loading = useSelector(getLoading);
   useEffect(() => {
-    dispatch(contactsOperations.fetchContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
   return (
     <div className="wrapper">
