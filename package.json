@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-07-phonebook-createAsyncThunk",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
@@ -32,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvgeniyaBarabash/goit-react-hw-07-phonebook-createAsyncThunk.git"
+    "url": "git+https://github.com/EvgeniyaBarabash/goit-react-hw-08-phonebook.git"
   },
   "author": "Evgeniya Barabash <barabash1989@gmail.com>",
   "bugs": {
-    "url": "https://github.com/EvgeniyaBarabash/goit-react-hw-07-phonebook-createAsyncThunk.git/issues"
+    "url": "https://github.com/EvgeniyaBarabash/goit-react-hw-08-phonebook.git/issues"
   },
-  "homepage": "https://EvgeniyaBarabash.github.io/goit-react-hw-07-phonebook-createAsyncThunk",
+  "homepage": "https://EvgeniyaBarabash.github.io/goit-react-hw-08-phonebook",
   "eslintConfig": {
     "extends": [
       "react-app",
