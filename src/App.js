@@ -9,6 +9,7 @@ import PrivateRoute from 'components/UserMenu/PrivateRoute';
 import PublicRoute from 'components/UserMenu/PublicRoute';
 import authSelectors from './redux/auth/auth-selectors';
 import Loading from 'components/Loader/Loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomeView = lazy(() => import('./views/HomeView'));
 const ContactsView = lazy(() => import('./views/ContactsView'));

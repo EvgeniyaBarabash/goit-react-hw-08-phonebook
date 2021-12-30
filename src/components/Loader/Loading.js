@@ -7,7 +7,7 @@ export default function Loading(){
         <Loader
           className={s.Loader}
           type="ThreeDots"
-          color="rgb(37, 131, 131)"
+          color="#0d6efd"
           height={80}
           width={80}
           timeout={5000}

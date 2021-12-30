@@ -19,11 +19,11 @@ const Navigation = () => {
       <Link to="/" style={styles.link}>
         Главная
       </Link>
-      {isLoggedIn && (
+      
         <Link to="/contacts" style={styles.link}>
           Контакты
         </Link>
-      )}
+      
     </nav>
   );
 };

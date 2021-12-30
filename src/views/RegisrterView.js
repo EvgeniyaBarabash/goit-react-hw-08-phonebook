@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../redux/auth/auth-operation';
 import styles from '../views/Views.module.css';
+import { Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -31,37 +33,45 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
-      <h1>Страница регистрации</h1>
+    <div className={styles.signup}>
+      <h1 className={styles.title}>Страница регистрации</h1>
+      <div>
+        <Form onSubmit={handleSubmit}  className={styles.form}>
+        <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Control
+              type="name"
+              placeholder="Name"
+              name="name"
+              value={name} onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3"  controlId="formBasicEmail" >
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
 
-      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
-        <label className={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-
-        <label className={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label className={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+          Sign Up
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }

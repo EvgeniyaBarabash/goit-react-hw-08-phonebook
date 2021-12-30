@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import {deleteContact} from '../../redux/contacts/contacts-operation';
+import { deleteContact } from '../../redux/contacts/contacts-operation';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selector';
+import { Button } from 'react-bootstrap';
 
 export default function ContactList() {
   const contacts = useSelector(getVisibleContacts);
@@ -16,13 +17,13 @@ export default function ContactList() {
             <p className={s.text}>
               {name}: {number}
             </p>
-            <button
+            <Button
               type="button"
               className={s.btn}
               onClick={() => dispatch(deleteContact(id))}
             >
               Delete
-            </button>
+            </Button>
           </li>
         ))}
       </ul>

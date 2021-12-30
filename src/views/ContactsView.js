@@ -5,6 +5,8 @@ import FormEditor from '../components/Form/FormEditor';
 import Filter from '../components/Filter/Filter';
 import { fetchContacts } from '../redux/contacts/contacts-operation';
 import { getLoading } from '../redux/contacts/contacts-selector';
+import Loading from 'components/Loader/Loading';
+import s from './Views.module.css';
 
 export default function ContactView() {
   const dispatch = useDispatch();
@@ -13,13 +15,13 @@ export default function ContactView() {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <div>
-      <h2>Phonebook</h2>
+    <div className={s.contactsView}>
+      <h2 className={s.titlePadding}>Phonebook</h2>
       <FormEditor />
-      <h2>Contacts</h2>
+      <h2 className={s.titlePadding}>Contacts</h2>
       <Filter />
       <ContactList />
-      {loading && <h1>Загружаем...</h1>}
+      {loading && <Loading />}
     </div>
   );
 }
