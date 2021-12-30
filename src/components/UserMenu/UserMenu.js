@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import defaultAvatar from './default-avatar.png';
-import  authSelectors  from '../../redux/auth/auth-selectors';
-import  {logOut}  from '../../redux/auth/auth-operation';
+import authSelectors from '../../redux/auth/auth-selectors';
+import { logOut } from '../../redux/auth/auth-operation';
 
 const styles = {
   container: {

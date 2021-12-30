@@ -1,0 +1,22 @@
+.form {
+  width: 320px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.container {
+  height: 100vh;
+  background-image: url(./logo.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  overflow: hidden;
+}
+.title {
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
+  color: rgb(37, 131, 131);
+}

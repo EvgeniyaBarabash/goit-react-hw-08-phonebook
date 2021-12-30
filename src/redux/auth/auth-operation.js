@@ -85,5 +85,3 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
-
-
